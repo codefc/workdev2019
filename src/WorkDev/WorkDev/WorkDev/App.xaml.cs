@@ -3,6 +3,9 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using WorkDev.Services;
 using WorkDev.Views;
+using Microsoft.AppCenter;
+using Microsoft.AppCenter.Analytics;
+using Microsoft.AppCenter.Crashes;
 
 namespace WorkDev
 {
@@ -19,7 +22,8 @@ namespace WorkDev
 
         protected override void OnStart()
         {
-            // Handle when your app starts
+            AppCenter.Start("android=ffbfa691-6cda-4c1e-b458-0f5ee2e52e75;", 
+                typeof(Analytics), typeof(Crashes));
         }
 
         protected override void OnSleep()
